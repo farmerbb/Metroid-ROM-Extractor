@@ -21,6 +21,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatDelegate
 import android.text.method.LinkMovementMethod
 import android.view.Menu
 import android.view.MenuItem
@@ -49,6 +50,8 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
 
         select.setOnClickListener { openInFilePicker() }
         save.setOnClickListener { openOutFilePicker() }
@@ -155,7 +158,7 @@ class MainActivity: AppCompatActivity() {
     fun TextView.drawableEnd(id: Int)
             = setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, id, 0)
 
-    fun TextView.setPadding(id: Int) {
+    private fun TextView.setPadding(id: Int) {
         val size = resources.getDimensionPixelSize(id)
         setPadding(size, size, size, size)
     }
