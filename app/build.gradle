@@ -1,5 +1,5 @@
 ext {
-    SUPPORT_LIBRARY_VERSION = "27.1.1"
+    SUPPORT_LIBRARY_VERSION = "28.0.0"
 }
 
 apply plugin: 'com.android.application'
@@ -13,17 +13,18 @@ repositories {
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "27.0.3"
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.farmerbb.metroidromextractor"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 28
 
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
 
         resConfigs "en"
+        vectorDrawables.useSupportLibrary = true
     }
 
     signingConfigs {
