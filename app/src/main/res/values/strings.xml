@@ -16,12 +16,12 @@
 <resources>
     <string name="app_name">Metroid ROM Extractor</string>
     <string name="app_name_debug">Metroid ROM Extractor (Debug)</string>
-    <string name="step_1"><b>Step 1:</b> Extract the file \"NESemu.rel\" from your legitimate backup copy of Metroid Prime. \"NESemuP.rel\" will also work, but \"NESEmuD.rel\" will not.\n\nIf you use Dolphin, you can extract this file via game properties; otherwise, use Gamecube ISO Tools.</string>
-    <string name="step_2"><b>Step 2:</b> Select the \"NESemu.rel\" file to extract the ROM from:</string>
+    <string name="step_1"><b>Step 1:</b> Extract the file \"NESemu.rel\" or \"NESPAL60emu.rel\" from your legitimate backup copy of Metroid Prime.\n\nIf you use Dolphin, you can extract this file via game properties; otherwise, use Gamecube ISO Tools.</string>
+    <string name="step_2"><b>Step 2:</b> Select the \"NESemu.rel\" or \"NESPAL60emu.rel\" file to extract the ROM from:</string>
     <string name="step_3"><b>Step 3:</b> Save the extracted Metroid NES ROM:</string>
     <string name="select">Select</string>
     <string name="save">Save</string>
     <string name="about">About</string>
-    <string name="about_dialog_text">Metroid ROM Extractor\n&#169; 2018 Braden Farmer\n\nBased on <a href="https://gist.github.com/FIX94/7593640c5cee6c37e3b23e7fcf8fe5b7">decryptmetroid.c</a> by FIX94</string>
+    <string name="about_dialog_text">Metroid ROM Extractor\n&#169; 2019 Braden Farmer\n\nBased on <a href="https://gist.github.com/FIX94/7593640c5cee6c37e3b23e7fcf8fe5b7">decryptmetroid.c</a> by FIX94</string>
     <string name="close">Close</string>
 </resources>
