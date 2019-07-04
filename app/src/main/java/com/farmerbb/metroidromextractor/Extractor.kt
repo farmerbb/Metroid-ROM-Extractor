@@ -35,7 +35,7 @@ class Extractor(private val inFile: File, private val outFile: File) {
 
     private lateinit var metroidPrimeVersion: MetroidPrimeVersion
 
-    enum class MetroidPrimeVersion { US_1_00, US_1_02 }
+    enum class MetroidPrimeVersion { US_1_00, US_1_02, PAL_1_00 }
 
     private external fun decryptMetroidNative(inArray: ByteArray): ByteArray
 
@@ -50,6 +50,7 @@ class Extractor(private val inFile: File, private val outFile: File) {
             metroidPrimeVersion = when(input.available()) {
                 181020 -> MetroidPrimeVersion.US_1_00
                 181052 -> MetroidPrimeVersion.US_1_02
+                181712 -> MetroidPrimeVersion.PAL_1_00
                 else -> return false
             }
 
@@ -78,10 +79,12 @@ class Extractor(private val inFile: File, private val outFile: File) {
 
     private fun validateInputFile(): Boolean {
         val md5s = arrayOf(
+                "05c8d2d95097e80721a4f130fef7edf5",
                 "0c669a58dc2bd79f5c62acfcfd3ccce8",
                 "10b0b686019cb75d8cbae5f9837f2236",
                 "2a7cc6ff20ff47d3d71721c8f7704593",
-                "d8216c7b1f68f3e68a63bd8c7c2d832a"
+                "d8216c7b1f68f3e68a63bd8c7c2d832a",
+                "fad4d6bf344d5a2a3c7160ccc921fb57"
         )
 
         val fileMd5 = generateMd5(inFile)
@@ -129,6 +132,7 @@ class Extractor(private val inFile: File, private val outFile: File) {
             file.seek(when(metroidPrimeVersion) {
                 MetroidPrimeVersion.US_1_00 -> 0xa3f8
                 MetroidPrimeVersion.US_1_02 -> 0xa418
+                MetroidPrimeVersion.PAL_1_00 -> 0xab20
             })
 
             file.readFully(inBytes)
